@@ -1,6 +1,6 @@
 import { By } from "selenium-webdriver";
 import { BasePage } from "./basePage"; 
-const fs = require('fs')
+const fs = require('fs');
 
 export class TatiasPage extends BasePage {
     noThanks: By = By.xpath('//div[text()="No, thanks"]');
@@ -11,7 +11,7 @@ export class TatiasPage extends BasePage {
     signIn: By = By.xpath('//input[@class="w-full tracking-wider text-xs font-body font-bold uppercase cursor-pointer rounded-full transition-colors bg-black border-2 border-solid border-transparent text-center py-3 text-white hover:bg-[#5A5A5A] mt-5"]');
     signOut: By = By.xpath('//a[@class="js-logout bg-[#F8F3F5] ml-2 mt-10 flex items-center gap-1 p-0.5 pl-3 pr-4 text-sm text-black capitalize w-max rounded-full group hover:bg-black hover:text-white"]');
     shopAll: By = By.xpath('(//a[@class="flex items-center h-full !outline-none text-base font-bold leading-5 tracking-[0.04em] text-black hover:text-[rgb(179,136,235)]"])[1]');
-    orangeBlossom: By = By.xpath('//a[text()="Classic Orange Blossom"]');
+    product: By = By.xpath('(//a[@class="block text-inherit"])[2]');
     arrowBtn: By = By.xpath('//div[@class="swiper-button-next"]');
     addToCart: By = By.name('add');
     header: By = By.xpath('//a[@class="pb-4 lg:pb-2 block"]');
@@ -23,6 +23,7 @@ export class TatiasPage extends BasePage {
     takeAQuiz: By = By.xpath('//a[text()="Take a Quiz!"]');
     startQuiz: By = By.id('start-quiz-btn');
     natureLandscapes: By = By.xpath('(//li[@class="oct-quiz-multiple-choice-options__option"])[8]');
+    //brands: By = By.xpath('(//div[@class="c0fca34e7b9c3c8eaa8b5b7716e387b4d8c7bf120"])[1]');
     medium: By = By.xpath('(//li[@class="oct-quiz-multiple-choice-options__option"])[2]');
     round: By = By.xpath('(//li[@class="oct-quiz-multiple-choice-options__option"])[1]');
 

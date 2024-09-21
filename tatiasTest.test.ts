@@ -1,6 +1,8 @@
 import { Driver } from "selenium-webdriver/chrome";
 import { TatiasPage } from "./tatiasPage";
 const page = new TatiasPage();
+const fs = require('fs');
+
 
 test ('log in to the account', async () => {
     await page.navigate();
@@ -19,7 +21,7 @@ test ('log in to the account', async () => {
 
 test ('add a product to the shopping cart', async () => {
     await page.click(page.shopAll);
-    await page.click(page.orangeBlossom);
+    await page.click(page.product);
     await page.driver.sleep(1000);
     await page.click(page.arrowBtn);
     await page.driver.sleep(1000);
@@ -40,7 +42,7 @@ test ('email me when back in stock', async () => {
     await page.driver.sleep(1000);
     await page.click(page.viewProduct);
     await page.driver.sleep(1000);
-    await page.setInput(page.yourEmailAddress, 'abcdloeh@hijl.pnk');
+    await page.setInput(page.yourEmailAddress, 'abcdgtoeh@hijl.pvk');
     await page.driver.sleep(1000);
     await page.click(page.emailMe);
     await page.driver.sleep(1000);
@@ -56,5 +58,11 @@ test ('take a quiz', async () => {
     await page.driver.sleep(1000);
     await page.click(page.round);
     await page.driver.sleep(1000);
+    await fs.writeFile(`${__dirname}//CurrentPage.png`,
+        await page.driver.takeScreenshot(), "base64",
+        (e) => {
+            if (e) console.error(e)
+            else console.log('This is the current page!');
+        });
     await page.driver.quit();
 });
